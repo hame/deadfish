@@ -5,22 +5,26 @@
 // o = output
 
 // Only one memory location (aka register or accumulator)
-// Initise to 0
-let accumulator = 0;
+let register = 0; // Initise to 0
 
 // The program
-// Set of instructions that modifies the accumulator
-let program = "iisso";
+// Set of instructions that modifies the register
+let program = "dsso";
 
 // The interpreter
 for (let instruction of program) {
   if (instruction == "i") {
-    accumulator = accumulator + 1;
+    register = register + 1;
   } else if (instruction == "d") {
-    accumulator = accumulator - 1;
+    register = register - 1;
   } else if (instruction == "s") {
-    accumulator = accumulator * accumulator;
+    register = register * register;
   } else if (instruction == "o") {
-    console.log(accumulator);
+    console.log(register);
   }
+
+  // Overflow deadfish style
+  /* Make sure x is not greater then [sic] 256 */
+  if (register == 256) register = 0;
+  if (register == -1) register = 0;
 }
