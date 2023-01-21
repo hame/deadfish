@@ -4,8 +4,8 @@
 // s = square
 // o = output
 
-// And can only operate on a single number, the accumulator
-// Don't need to store where we are in the program, there is no control flow
+// Only one memory location (aka register or accumulator)
+// Initise to 0
 let accumulator = 0;
 
 // The program
